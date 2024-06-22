@@ -19,24 +19,32 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
-                <th>Phone NumberStu</th>
+                <th>Phone Number</th>
                 <th>Location</th>
                 <th>Hobby</th>
                 <th>Actions</th>
             </tr>
             {% for student in students %}
             <tr>
-                <td>{% student.id %}</td>
-                <td>{% student.name %}</td>
-                <td>{% student.age %}</td>
-                <td>{% student.email %}</td>
-                <td>{% student.location %}</td>
-                <td>{% student.hobby %}</td>
-                <td><button id='edit' name='edit'>Edit</button>
-                    <button id='delete' name='delete'>delete</button>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.phone }}</td>
+                <td>{{ student.location }}</td>
+                <td>{{ student.hobby }}</td>
+                <td><button name='edit'>Edit</button>
+                    <button name='delete'>delete</button>
                 </td>
             </tr>
             {% endfor %}
+            <tr>
+                <td>{{ student.id.max }}</td>
+                {% for field in form %}
+                <td>{{ field }}</td>
+                {% endfor %}
+                <td><button name='save'>Save</button></td>
+            </tr>
         </table>
         <div class='botton_btn'>
             <form method='post' action="{% url 'index' %}">
