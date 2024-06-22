@@ -1,0 +1,47 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Kelvin Chukwuka">
+
+        <title>CRUD Database</title>
+
+    </head>
+    <body>
+        <h1>CRUD Database</h1>
+        <form method='post' action="{% url 'index' %}">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Location</th>
+                <th>Hobby</th>
+                <th>Actions</th>
+            </tr>
+            
+            <tr>
+                <td>{% stud.id %}</td>
+                <td>{% stud.name %}</td>
+                <td>{% stud.age %}</td>
+                <td>{% stud.email %}</td>
+                <td>{% stud.location %}</td>
+                <td>{% stud.hobby %}</td>
+                <td><button id='edit' name='edit'>Edit</button>
+                    <button id='delete' name='delete'>delete</button>
+                </td>
+            </tr>
+        </table>
+        <div class='botton_btn'>
+            <form method='post' action="{% url 'index' %}">
+                <button name='download' id='download'>Download CSV</button>
+                <button name='add' id='add'>Add Item</button>
+            </form>
+        </div>
+    </body>
+</html>
