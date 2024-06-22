@@ -19,23 +19,24 @@
                 <th>Name</th>
                 <th>Age</th>
                 <th>Email</th>
-                <th>Phone Number</th>
+                <th>Phone NumberStu</th>
                 <th>Location</th>
                 <th>Hobby</th>
                 <th>Actions</th>
             </tr>
-            
+            {% for student in students %}
             <tr>
-                <td>{% stud.id %}</td>
-                <td>{% stud.name %}</td>
-                <td>{% stud.age %}</td>
-                <td>{% stud.email %}</td>
-                <td>{% stud.location %}</td>
-                <td>{% stud.hobby %}</td>
+                <td>{% student.id %}</td>
+                <td>{% student.name %}</td>
+                <td>{% student.age %}</td>
+                <td>{% student.email %}</td>
+                <td>{% student.location %}</td>
+                <td>{% student.hobby %}</td>
                 <td><button id='edit' name='edit'>Edit</button>
                     <button id='delete' name='delete'>delete</button>
                 </td>
             </tr>
+            {% endfor %}
         </table>
         <div class='botton_btn'>
             <form method='post' action="{% url 'index' %}">
