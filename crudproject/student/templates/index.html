@@ -13,6 +13,7 @@
     <body>
         <h1>CRUD Database</h1>
         <form method='post' action="{% url 'index' %}">
+        {% csrf_token %}
         <table>
             <tr>
                 <th>ID</th>
@@ -39,7 +40,7 @@
             </tr>
             {% endfor %}
             <tr>
-                <td>{{ student.id.max }}</td>
+                <td></td>
                 {% for field in form %}
                 <td>{{ field }}</td>
                 {% endfor %}

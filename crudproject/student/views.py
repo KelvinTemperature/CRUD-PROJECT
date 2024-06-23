@@ -10,4 +10,8 @@ def index(request):
     students = Student.objects.all()
     context['students'] = students
     context['form'] = form
+    if request.method == 'POST':
+        if 'save' in request.POST:
+            form.save()
+            form = StudentForm()
     return render(request, 'index.html', context)
